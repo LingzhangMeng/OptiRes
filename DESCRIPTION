@@ -1,10 +1,14 @@
 Package: OptiRes
 Type: Package
-Title: To determin the optimal rsoltuion factor for clustering in scRNA-seq analysis
+Title: find the optimal resolution for R package Seurat
 Version: 0.1.0
-Author: Huijuan Li (Central South University, Changsha, China), Prof. Qing Li, Hewei Xiao, Lingzhang Meng, Jian Song
-Maintainer: Huijuan Li <lhj1065@126.com>
-Description: In the process of scRNA-seq analysis, the R package Seurat is widely used. However, different resolution factors determins cluster numbers.    ho
+Author: Huijuan Li (Central South University), Qing Li (Central South University), Hewei Xiao (Guangxi Academy of Medical Sciences & The People's Hospitel of Guangxi Zhuang Autonomous Region),
+  Lingzhang Meng (Guangxi Academy of Medical Sciences & The People's Hospitel of Guangxi Zhuang Autonomous Region),
+  Jian Song(Guangxi Academy of Medical Sciences & The People's Hospitel of Guangxi Zhuang Autonomous Region)
+Maintainer: Prof. Dr. rer. nat. Lingzhang Meng <187398958@qq.com>
+Description: This R package is developed for calculating the silhouette score at different resolutions in the process of
+  scRNA-seq analysis.
+    Use four spaces when indenting paragraphs within the Description.
 License: No license
 Encoding: UTF-8
 LazyData: true

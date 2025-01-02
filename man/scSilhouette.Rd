@@ -4,12 +4,14 @@
 \alias{scSilhouette}
 \title{Calculate Average Silhouette Scores Across Resolutions}
 \usage{
-scSilhouette(seu_obj, resolutions = seq(0.01, 2, 0.01))
+scSilhouette(seu_obj, resolutions = seq(0.01, 2, 0.01), verbose = TRUE)
 }
 \arguments{
 \item{seu_obj}{A Seurat object containing preprocessed single-cell data, including UMAP embeddings.}
 
 \item{resolutions}{Numeric vector of resolution values to evaluate. Default is \code{seq(0.01, 2, 0.01)}.}
+
+\item{verbose}{Logical. Whether to print progress and results. Default is \code{TRUE}.}
 }
 \value{
 A data frame with two columns: \code{Resolution} and \code{SilhouetteScore}, representing the resolution values and their corresponding average silhouette scores.
@@ -22,8 +24,7 @@ This function computes the average silhouette scores for clustering results acro
 # Assuming 'seu_obj' is a preprocessed Seurat object with UMAP embeddings
 results_df <- scSilhouette(seu_obj, resolutions = seq(0.1, 1.0, 0.1))
 # Plot the silhouette scores
-plot(results_df$Resolution, results_df$SilhouetteScore, type = "b",
-     xlab = "Resolution", ylab = "Average Silhouette Score",
-     main = "Silhouette Scores Across Resolutions")
+results_df <- scSilhouette(seu_obj)
+Plot_res(results_df)
 }
 }
