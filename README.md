@@ -8,3 +8,12 @@ could provide help choose the optimal resolution factor based on mathematical ca
 library(devtools) <br/> 
 devtools::install_github("LingzhangMeng/OptiRes")<br/> 
 library(OptiRes)<br/> 
+
+# Dependencies
+library(Seurat) <br/> 
+library(cluster) <br/> 
+library(ggplot2) <br/> 
+library(ggdendro) <br/> 
+library(dendextend) <br/> 
+library(circlize) <br/> 
+
