@@ -12,7 +12,7 @@
 #' @examples
 #' \dontrun{
 #' # Assuming 'seu_obj' is a preprocessed Seurat object with UMAP embeddings
-#' results_df <- scSilhouette(seu_obj, resolutions = seq(0.1, 1.0, 0.1))
+#' results_df <- scSilhouette(seu_obj, resolutions = seq(0.01, 2.0, 0.01))
 #' # Plot the silhouette scores
 #' results_df <- scSilhouette(seu_obj)
 #' Plot_res(results_df)
