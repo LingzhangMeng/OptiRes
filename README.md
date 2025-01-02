@@ -5,6 +5,6 @@ factor at random. Such a situation usually causes controversial debate over scRN
 could provide help choose the optimal resolution factor based on mathematical calculation.
 
 # Installation
-library(devtools)
-devtools::install_github("LingzhangMeng/OptiRes")
-library(OptiRes)
+library(devtools) <br/> 
+devtools::install_github("LingzhangMeng/OptiRes")<br/> 
+library(OptiRes)<br/> 
