@@ -5,4 +5,6 @@ factor at random. Such a situation usually causes controversial debate over scRN
 could provide help choose the optimal resolution factor based on mathematical calculation.
 
 # Installation
-SilhouetteScore
+library(devtools)
+devtools::install_github("LingzhangMeng/OptiRes")
+library(OptiRes)
