@@ -65,8 +65,10 @@ Plot_ColorfulClusterTree(Seu_obj, results_df) <br/> <br/>
 
 
 Step 5: Draw umap at optimal resoluton <br/> 
-DimPlot(Seu_obj) <br/> 
-![Screenshot from 2025-01-02 11-14-02](https://github.com/user-attachments/assets/2c69a291-fb7b-41d1-84d3-a4c4f24aecc2)
+DimPlot(Seu_obj) <br/> <br/> 
+![Screenshot from 2025-01-02 11-15-09](https://github.com/user-attachments/assets/5b5446cf-f82e-4a1e-aa09-a740f5f83d6d)
+
+
 
 
 
