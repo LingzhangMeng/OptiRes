@@ -59,8 +59,8 @@ The optimal resoluton factor, 0.42 (for seurat object used in this tutorial) was
 
 Step 4: Draw a colorful cluster tree for checking the relationship between cell types based on genetic profiles,<br/> 
 which will help cell type annotations.<br/> 
-Plot_ColorfulClusterTree(Seu_obj, results_df) <br/> <br/> 
-
+Plot_ColorfulClusterTree(Seu_obj, results_df, dims = 1:5) <br/> <br/> 
+dims = 1:5 could be adjusted to dims = 1:3, or dims = 1:4, or dims = 1:6, or dims =1:10...<br/>
 ![Screenshot from 2025-01-02 11-09-31](https://github.com/user-attachments/assets/32f37222-3449-48b6-93d4-88ae57b09ec8)<br/> <br/> 
 
 
