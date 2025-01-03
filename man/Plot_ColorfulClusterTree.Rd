@@ -4,7 +4,7 @@
 \alias{Plot_ColorfulClusterTree}
 \title{Plot Colorful Cluster Tree}
 \usage{
-Plot_ColorfulClusterTree(seu_obj, results_df)
+Plot_ColorfulClusterTree(seu_obj, results_df, dims = 1:5)
 }
 \arguments{
 \item{seu_obj}{A Seurat object containing preprocessed single-cell data.}

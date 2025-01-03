@@ -90,8 +90,8 @@ Plot_res <- function(results_df) {
 
   # Create the plot
   p <- ggplot(results_df, aes(x = Resolution, y = SilhouetteScore)) +
-    geom_line(color = "blue") +
-    geom_point(color = "blue") +
+    geom_line(color = "black") +
+    geom_point(color = "black") +
     geom_point(data = results_df[results_df$Resolution == optimal_resolution, ],
                aes(x = Resolution, y = SilhouetteScore),
                color = "red", size = 3) +  # Highlight optimal resolution
@@ -129,7 +129,7 @@ Plot_res <- function(results_df) {
 #' results_df <- scSilhouette(seu_obj)
 #' Plot_ColorfulClusterTree(seu_obj, results_df)
 #' }
-Plot_ColorfulClusterTree <- function(seu_obj, results_df) {
+Plot_ColorfulClusterTree <- function(seu_obj, results_df, dims = 1:5) {
   # Validate input
   if (!all(c("Resolution", "SilhouetteScore") %in% colnames(results_df))) {
     stop("The input results_df must contain 'Resolution' and 'SilhouetteScore' columns.")
@@ -141,8 +141,8 @@ Plot_ColorfulClusterTree <- function(seu_obj, results_df) {
   # Perform clustering with the optimal resolution
   seu_obj <- FindClusters(seu_obj, resolution = optimal_resolution)
 
-  # Build the cluster tree
-  seu_obj <- BuildClusterTree(seu_obj, dims = 1:5)  # Adjust `dims` as needed
+  # Build the cluster tree using the specified dimensions
+  seu_obj <- BuildClusterTree(seu_obj, dims = dims)
 
   # Convert the cluster tree to a dendrogram
   dendro <- as.dendrogram(seu_obj@tools$BuildClusterTree)
@@ -150,16 +150,19 @@ Plot_ColorfulClusterTree <- function(seu_obj, results_df) {
   # Set the number of clusters
   num_clusters <- length(unique(seu_obj@active.ident))
 
-  # Color the dendrogram branches and labels
-  library(dendextend)  # Ensure the dendextend package is installed
-  dendro_colored <- dendro %>%
-    set("branches_k_color", k = num_clusters) %>%
-    set("labels_colors", k = num_clusters) %>%
-    set("labels_cex", 0.8)
+  # Check if 'dendextend' is available
+  if (requireNamespace("dendextend", quietly = TRUE)) {
+    # Color the dendrogram branches and labels
+    dendro_colored <- dendextend::set(dendro, "branches_k_color", k = num_clusters) %>%
+      dendextend::set("labels_colors", k = num_clusters) %>%
+      dendextend::set("labels_cex", 0.8)
 
-  # Plot the colorful dendrogram
-  plot(dendro_colored, main = "Cluster Tree with Colored Branches and Labels")
+    # Plot the colorful dendrogram
+    plot(dendro_colored, main = "Cluster Tree")
 
-  # Return the dendrogram object (optional)
-  return(dendro_colored)
+    # Return the dendrogram object
+    return(dendro_colored)
+  } else {
+    stop("The 'dendextend' package is required but not installed.")
+  }
 }
