@@ -2,7 +2,7 @@ OptiRes: Optimal Resolution Selection for scRNA-seq Analysis
 Description
 The OptiRes R package is designed to identify the optimal clustering resolution for single-cell RNA sequencing (scRNA-seq) analysis performed with the Seurat package. By leveraging the Silhouette Score algorithm, OptiRes evaluates a range of resolution values (default: 0.01 to 2.00) to determine the resolution that maximizes cluster quality, eliminating the need for arbitrary or experience-based resolution selection. This approach provides a mathematically robust method to enhance the reliability of scRNA-seq clustering results. Additionally, OptiRes includes functionality to visualize silhouette scores and generate colorful dendrograms for cluster relationships, aiding in cell type annotation.
 Installation
-To install the OptiRes package from GitHub, use the following commands in R:
+To install the OptiRes package from GitHub, use the following commands in R. You can copy the code by clicking the copy icon that appears when hovering over the code block on GitHub.
 # Install devtools if not already installed
 if (!requireNamespace("devtools", quietly = TRUE)) {
   install.packages("devtools")
@@ -15,7 +15,7 @@ devtools::install_github("LingzhangMeng/OptiRes")
 library(OptiRes)
 
 Dependencies
-The OptiRes package requires the following R packages, which should be installed prior to using OptiRes:
+The OptiRes package requires the following R packages, which should be installed prior to using OptiRes. Copy the code below to install dependencies:
 # Install required packages if not already installed
 install.packages(c("Seurat", "cluster", "ggplot2", "ggdendro", "dendextend", "circlize"))
 
@@ -28,9 +28,9 @@ dendextend: For colorful dendrogram plotting.
 circlize: For enhanced visualization of cluster relationships.
 
 Tutorial
-This tutorial outlines the steps to use OptiRes for determining the optimal clustering resolution and visualizing the results.
+This tutorial outlines the steps to use OptiRes for determining the optimal clustering resolution and visualizing the results. You can copy each code snippet by clicking the copy icon that appears when hovering over the code block on GitHub.
 Step 1: Preprocess scRNA-seq Data with Seurat
-Process your scRNA-seq data using the standard Seurat workflow, which includes the following steps:
+Process your scRNA-seq data using the standard Seurat workflow:
 # Example Seurat workflow (adjust as needed)
 library(Seurat)
 seu_obj <- ScaleData(seu_obj)
@@ -88,6 +88,7 @@ Notes
 The optimal resolution is automatically selected based on the highest silhouette score, ensuring robust clustering results.
 The dims parameter in Plot_ColorfulClusterTree can be adjusted to include more or fewer principal components, depending on the dataset's complexity.
 Ensure all dependencies are installed and up-to-date to avoid compatibility issues.
+To copy code snippets, hover over the code block on GitHub and click the copy icon that appears in the top-right corner.
 
 License
 This package is licensed under the MIT License. See the LICENSE file for details.
