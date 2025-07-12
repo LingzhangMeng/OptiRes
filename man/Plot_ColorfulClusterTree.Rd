@@ -10,17 +10,20 @@ Plot_ColorfulClusterTree(seu_obj, results_df, dims = 1:5)
 \item{seu_obj}{A Seurat object containing preprocessed single-cell data.}
 
 \item{results_df}{A data frame containing the silhouette scores and resolutions, typically the output of \code{scSilhouette}.}
+
+\item{dims}{Numeric vector specifying the dimensions to use for building the cluster tree. Default is \code{1:5}.}
 }
 \value{
 A dendrogram object with branches and labels colored by cluster.
 }
 \description{
-This function generates a colorful dendrogram for the Seurat object's cluster tree.
+This function generates a colorful dendrogram for the Seurat object's cluster tree, highlighting clusters at the optimal resolution.
 }
 \examples{
 \dontrun{
 # Assuming 'seu_obj' is a preprocessed Seurat object and 'results_df' is the output of scSilhouette
 results_df <- scSilhouette(seu_obj)
-Plot_ColorfulClusterTree(seu_obj, results_df)
+dendro <- Plot_ColorfulClusterTree(seu_obj, results_df, dims = 1:10)
+plot(dendro)
 }
 }

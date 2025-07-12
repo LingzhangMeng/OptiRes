@@ -9,7 +9,7 @@ scSilhouette(seu_obj, resolutions = seq(0.01, 2, 0.01), verbose = TRUE)
 \arguments{
 \item{seu_obj}{A Seurat object containing preprocessed single-cell data, including UMAP embeddings.}
 
-\item{resolutions}{Numeric vector of resolution values to evaluate. Default is \code{seq(0.01, 2, 0.01)}.}
+\item{resolutions}{Numeric vector of resolution values to evaluate. Must be positive. Default is \code{seq(0.01, 2, 0.01)}.}
 
 \item{verbose}{Logical. Whether to print progress and results. Default is \code{TRUE}.}
 }
@@ -22,9 +22,8 @@ This function computes the average silhouette scores for clustering results acro
 \examples{
 \dontrun{
 # Assuming 'seu_obj' is a preprocessed Seurat object with UMAP embeddings
-results_df <- scSilhouette(seu_obj, resolutions = seq(0.01, 2.0, 0.01))
+results_df <- scSilhouette(seu_obj, resolutions = seq(0.1, 1.0, 0.1))
 # Plot the silhouette scores
-results_df <- scSilhouette(seu_obj)
 Plot_res(results_df)
 }
 }

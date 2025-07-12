@@ -1,19 +1,12 @@
 Package: OptiRes
 Type: Package
-Title: find the optimal resolution for R package Seurat
+Title: What the Package Does (Title Case)
 Version: 0.1.0
-Author: Huijuan Li (Central South University), Qing Li (Central South University), Hewei Xiao (Guangxi Academy of Medical Sciences & The People's Hospitel of Guangxi Zhuang Autonomous Region),
-  Lingzhang Meng (Guangxi Academy of Medical Sciences & The People's Hospitel of Guangxi Zhuang Autonomous Region),
-  Jian Song(Guangxi Academy of Medical Sciences & The People's Hospitel of Guangxi Zhuang Autonomous Region)
-Maintainer: Prof. Dr. rer. nat. Lingzhang Meng <187398958@qq.com>
-Description: This R package is developed for calculating the silhouette score at different resolutions in the process of
-  scRNA-seq analysis.
+Author: Who wrote it
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: No license
+License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
-Imports:
-    dendextend
-
-

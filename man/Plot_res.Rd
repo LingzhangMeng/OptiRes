@@ -10,14 +10,15 @@ Plot_res(results_df)
 \item{results_df}{A data frame with columns \code{Resolution} and \code{SilhouetteScore}, typically the output of \code{scSilhouette}.}
 }
 \value{
-A ggplot object showing the silhouette scores and the optimal resolution.
+A ggplot object displaying the silhouette scores with the optimal resolution highlighted.
 }
 \description{
-This function visualizes the silhouette scores for different clustering resolutions and highlights the optimal resolution.
+This function visualizes the silhouette scores for different clustering resolutions and highlights the optimal resolution using ggplot2.
 }
 \examples{
 \dontrun{
 # Assuming 'results_df' is the output of scSilhouette
-Plot_res(results_df)
+p <- Plot_res(results_df)
+print(p)
 }
 }
