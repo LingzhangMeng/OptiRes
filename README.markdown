@@ -70,18 +70,31 @@ results_df <- scSilhouette(seu_obj, resolutions = seq(0.01, 2.00, 0.01))
 ```
 Calculating silhouette scores for 200 resolutions...
 Computing resolution at 0.01
-Silhouette score = 0.3528
+Silhouette score = 0.3496
 Computing resolution at 0.02
-Silhouette score = 0.3594
+Silhouette score = 0.4179
 Computing resolution at 0.03
-Silhouette score = 0.4341
+Silhouette score = 0.4175
 Computing resolution at 0.04
-Silhouette score = 0.4348
+Silhouette score = 0.4522
+Computing resolution at 0.05
+Silhouette score = 0.4787
+Computing resolution at 0.06
+Silhouette score = 0.4862
+Computing resolution at 0.07
+Silhouette score = 0.4864
+Computing resolution at 0.08
+Silhouette score = 0.4819
+Computing resolution at 0.09
+Silhouette score = 0.4726
+Computing resolution at 0.10
+Silhouette score = 0.3838
+Computing resolution at 0.11
 ...
 Computing resolution at 2.00
 Silhouette score = 0.3125
-Highest Silhouette Score: 0.4348
-Optimal Resolution: 0.04
+Highest Silhouette Score: 0.4864
+Optimal Resolution: 0.07
 ```
 
 View the results:
