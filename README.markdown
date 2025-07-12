@@ -114,7 +114,7 @@ library(ggplot2)
 p <- Plot_res(results_df)
 print(p)
 ```
-for example \
+**Example Output:**
 <img width="931" height="704" alt="Screenshot 2025-07-12 092636" src="https://github.com/user-attachments/assets/c23bba10-f352-4c8a-a332-5b6b3d5215af" />
 
 This generates a plot with silhouette scores across resolutions, highlighting the optimal resolution in red (e.g., 0.07 in the example dataset).
