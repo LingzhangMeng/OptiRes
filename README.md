@@ -80,7 +80,7 @@ Create a colorful dendrogram to visualize cluster relationships at the optimal r
 dendro <- Plot_ColorfulClusterTree(seu_obj, results_df, dims = 1:5)\
 plot(dendro)
 
-The dims parameter specifies the principal components used for building the cluster tree. Adjust as needed (e.g., dims = 1:3, dims = 1:10) based on your data.\
+The dims parameter specifies the principal components used for building the cluster tree. Adjust as needed (e.g., dims = 1:3, dims = 1:10) based on your data.
 
 Step 5: Visualize Clusters with UMAP
 Visualize the clusters at the optimal resolution using a UMAP plot: \
