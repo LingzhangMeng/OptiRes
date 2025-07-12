@@ -32,54 +32,59 @@ This tutorial outlines the steps to use OptiRes for determining the optimal clus
 Step 1: Preprocess scRNA-seq Data with Seurat
 Process your scRNA-seq data using the standard Seurat workflow:
 # Example Seurat workflow (adjust as needed)
-library(Seurat)
-seu_obj <- ScaleData(seu_obj)
-seu_obj <- RunPCA(seu_obj)
-seu_obj <- FindNeighbors(seu_obj)
-seu_obj <- FindClusters(seu_obj, resolution = 0.5)  # Temporary resolution
-seu_obj <- RunUMAP(seu_obj)
+Step 1: Embedd UMAP
+library(Seurat) \
+seu_obj <- ScaleData(seu_obj) \
+seu_obj <- RunPCA(seu_obj) \
+seu_obj <- FindNeighbors(seu_obj) \
+seu_obj <- FindClusters(seu_obj, resolution = 0.5)  # Temporary resolution \
+seu_obj <- RunUMAP(seu_obj) 
 
-Ensure that UMAP embeddings are generated, as they are required for silhouette score calculations. The initial resolution value in FindClusters can be arbitrary, as OptiRes will evaluate a range of resolutions.
+Ensure that UMAP embeddings are generated, as they are required for silhouette score calculations. The initial resolution value in FindClusters can be arbitrary, as OptiRes will evaluate a range of resolutions. \
+
 Step 2: Calculate Silhouette Scores Across Resolutions
-Use the scSilhouette function to compute silhouette scores for a range of resolution values:
+Use the scSilhouette function to compute silhouette scores for a range of resolution values:\
 results_df <- scSilhouette(seu_obj, resolutions = seq(0.01, 2.00, 0.01))
 
 Example Output:
-Calculating silhouette scores for 200 resolutions...
-Computing resolution at 0.01
-Silhouette score = 0.3528
-Computing resolution at 0.02
-Silhouette score = 0.3594
-Computing resolution at 0.03
-Silhouette score = 0.4341
-Computing resolution at 0.04
-Silhouette score = 0.4348
-...
-Computing resolution at 2.00
-Silhouette score = 0.3125
-Highest Silhouette Score: 0.4348
+Calculating silhouette scores for 200 resolutions... \
+Computing resolution at 0.01 \
+Silhouette score = 0.3528\
+Computing resolution at 0.02\
+Silhouette score = 0.3594\
+Computing resolution at 0.03\
+Silhouette score = 0.4341\
+Computing resolution at 0.04\
+Silhouette score = 0.4348\
+...\
+Computing resolution at 2.00\
+Silhouette score = 0.3125\
+Highest Silhouette Score: 0.4348\
 Optimal Resolution: 0.04
 
 View the results:
 View(results_df)
 
-The output is a data frame with two columns: Resolution and SilhouetteScore.
+The output is a data frame with two columns: Resolution and SilhouetteScore.\
+
 Step 3: Visualize Silhouette Scores
 Plot the silhouette scores to identify the optimal resolution:
 library(ggplot2)
 p <- Plot_res(results_df)
 print(p)
 
-This generates a plot with silhouette scores across resolutions, highlighting the optimal resolution in red (e.g., 0.42 in the example dataset).
-Step 4: Generate a Colorful Cluster Tree
-Create a colorful dendrogram to visualize cluster relationships at the optimal resolution, which aids in cell type annotation:
-dendro <- Plot_ColorfulClusterTree(seu_obj, results_df, dims = 1:5)
+This generates a plot with silhouette scores across resolutions, highlighting the optimal resolution in red (e.g., 0.42 in the example dataset).\
+
+Step 4: Generate a Colorful Cluster Tree\
+Create a colorful dendrogram to visualize cluster relationships at the optimal resolution, which aids in cell type annotation:\
+dendro <- Plot_ColorfulClusterTree(seu_obj, results_df, dims = 1:5)\
 plot(dendro)
 
-The dims parameter specifies the principal components used for building the cluster tree. Adjust as needed (e.g., dims = 1:3, dims = 1:10) based on your data.
+The dims parameter specifies the principal components used for building the cluster tree. Adjust as needed (e.g., dims = 1:3, dims = 1:10) based on your data.\
+
 Step 5: Visualize Clusters with UMAP
-Visualize the clusters at the optimal resolution using a UMAP plot:
-library(Seurat)
+Visualize the clusters at the optimal resolution using a UMAP plot: \
+library(Seurat) \
 DimPlot(seu_obj, reduction = "umap")
 
 This plot displays the cell clusters based on the optimal resolution identified by OptiRes.
