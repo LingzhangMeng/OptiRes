@@ -6,7 +6,7 @@ The `OptiRes` R package is designed to identify the optimal clustering resolutio
 
 ## Installation
 
-**To install the `OptiRes` package from GitHub, use the following commands in R.** You can copy the code by clicking the copy icon that appears when hovering over the code block on GitHub.
+**To install the `OptiRes` package from GitHub, use the following commands in R.** 
 
 ```R
 # Install devtools if not already installed
