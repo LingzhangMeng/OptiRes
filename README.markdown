@@ -27,7 +27,7 @@ The `OptiRes` package requires the following R packages, which should be install
 
 ```R
 # Install required packages if not already installed
-install.packages(c("Seurat", "cluster", "ggplot2", "ggdendro", "dendextend", "circlize"))\
+install.packages(c("Seurat", "cluster", "ggplot2", "ggdendro", "dendextend", "circlize"))
 
 # Load dependencies
 library(Seurat)
