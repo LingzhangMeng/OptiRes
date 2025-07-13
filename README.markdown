@@ -147,6 +147,11 @@ dendro <- Plot_ColorfulClusterTree(seu_obj, results_df, dims = 1:5)
 plot(dendro)
 ```
 
+**Example Output:**
+
+<img width="393" height="363" alt="Weixin Image_20250713103018" src="https://github.com/user-attachments/assets/bae5b73b-5fd6-4818-a20a-aefdcd7e7ea4" />
+
+
 The `dims` parameter specifies the principal components used for building the cluster tree. Adjust as needed (e.g., `dims = 1:3`, `dims = 1:10`) based on your data.
 
 ### Step 5: Visualize Clusters with UMAP
