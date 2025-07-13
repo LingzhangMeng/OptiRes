@@ -119,6 +119,11 @@ The output is a data frame with two columns: `Resolution` and `SilhouetteScore`.
 optimal_resolution = results_df$Resolution[which.max(results_df$SilhouetteScore)]
 cat("Optimal Resolution =", red(optimal_resolution))
 ```
+**Example Output:**
+
+```
+Optimal Resolution = 0.07
+```
 
 ### Step 3: Visualize Silhouette Scores
 
