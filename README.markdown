@@ -36,6 +36,7 @@ library(ggplot2)
 library(ggdendro)
 library(dendextend)
 library(circlize)
+library(crayon)
 ```
 
 - `Seurat`: For scRNA-seq data processing and clustering.
