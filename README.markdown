@@ -9,7 +9,7 @@ The `OptiRes` R package is designed to identify the optimal clustering resolutio
 ## Background information
 The Silhouette Score is a metric used to evaluate the quality of clustering in unsupervised machine learning, measuring how similar an object is to its own cluster compared to other clusters. Below is a detailed explanation of the algorithm to compute the Silhouette Score, presented in a formal and structured manner.
 
-## (1) Algorithm for Computing the Silhouette Score
+## Algorithm for Computing the Silhouette Score
 The Silhouette Score is calculated for each data point in a clustered dataset and then averaged to obtain an overall score for the clustering. The score ranges from -1 to 1, where higher values indicate better-defined clusters. The algorithm proceeds as follows:
 
 <img width="308" height="768" alt="image" src="https://github.com/user-attachments/assets/518cae21-b416-420e-aaa1-370239c24a95" />
