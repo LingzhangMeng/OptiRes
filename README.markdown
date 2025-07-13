@@ -134,7 +134,8 @@ p <- Plot_res(results_df)
 print(p)
 ```
 **Example Output:**
-<img width="931" height="704" alt="Screenshot 2025-07-12 092636" src="https://github.com/user-attachments/assets/c23bba10-f352-4c8a-a332-5b6b3d5215af" />
+<img width="622" height="468" alt="Weixin Image_20250713103349" src="https://github.com/user-attachments/assets/f0eb238f-3e99-4ae9-ac46-9cc3110a1163" />
+
 
 This generates a plot with silhouette scores across resolutions, highlighting the optimal resolution in red (e.g., 0.07 in the example dataset).
 
