@@ -4,6 +4,23 @@
 
 The `OptiRes` R package is designed to identify the optimal clustering resolution for single-cell RNA sequencing (scRNA-seq) analysis performed with the `Seurat` package. By leveraging the Silhouette Score algorithm, `OptiRes` evaluates a range of resolution values (default: 0.01 to 2.00) to determine the resolution that maximizes cluster quality, eliminating the need for arbitrary or experience-based resolution selection. This approach provides a mathematically robust method to enhance the reliability of scRNA-seq clustering results. Additionally, `OptiRes` includes functionality to visualize silhouette scores and generate colorful dendrograms for cluster relationships, aiding in cell type annotation. By the way, this package is also suitable for integrated seurat objects.
 
+
+
+## Background information
+The Silhouette Score is a metric used to evaluate the quality of clustering in unsupervised machine learning, measuring how similar an object is to its own cluster compared to other clusters. Below is a detailed explanation of the algorithm to compute the Silhouette Score, presented in a formal and structured manner.
+
+## (1) Algorithm for Computing the Silhouette Score
+The Silhouette Score is calculated for each data point in a clustered dataset and then averaged to obtain an overall score for the clustering. The score ranges from -1 to 1, where higher values indicate better-defined clusters. The algorithm proceeds as follows:
+
+Input Requirements:
+
+A dataset with $ n $ data points, each assigned to a cluster.
+A clustering result where each data point $ i $ belongs to one of $ k $ clusters.
+A distance metric (e.g., Euclidean distance) to measure distances between data points.
+
+<img width="308" height="768" alt="image" src="https://github.com/user-attachments/assets/518cae21-b416-420e-aaa1-370239c24a95" />
+
+
 ## Installation
 
 **To install the `OptiRes` package from GitHub, use the following commands in R.** 
