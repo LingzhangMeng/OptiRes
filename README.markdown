@@ -169,13 +169,16 @@ DimPlot(seu_obj, reduction = "umap")
 This plot displays the cell clusters based on the optimal resolution identified by `OptiRes`.
 
 **Example Output:**
-![Uploading Weixin Image_20250713103724.png…]()
+<img width="400" height="368" alt="Weixin Image_20250713103724" src="https://github.com/user-attachments/assets/2f827873-3fb1-4baa-b2ae-4daecae4cccb" />
 
 
-# Export Silhouettee scores calculated on different resolutions
+
+### Step 6: Export Silhouettee scores calculated on different resolutions
 ```R
 write.csv(results_df, "D:/scSilhouette_results_df.csv", quote = F)
 ```
+
+
 ## Notes
 
 - The optimal resolution is automatically selected based on the highest silhouette score, ensuring robust clustering results.
