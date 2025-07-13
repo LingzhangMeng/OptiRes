@@ -12,12 +12,6 @@ The Silhouette Score is a metric used to evaluate the quality of clustering in u
 ## (1) Algorithm for Computing the Silhouette Score
 The Silhouette Score is calculated for each data point in a clustered dataset and then averaged to obtain an overall score for the clustering. The score ranges from -1 to 1, where higher values indicate better-defined clusters. The algorithm proceeds as follows:
 
-Input Requirements:
-
-A dataset with $ n $ data points, each assigned to a cluster.
-A clustering result where each data point $ i $ belongs to one of $ k $ clusters.
-A distance metric (e.g., Euclidean distance) to measure distances between data points.
-
 <img width="308" height="768" alt="image" src="https://github.com/user-attachments/assets/518cae21-b416-420e-aaa1-370239c24a95" />
 
 
