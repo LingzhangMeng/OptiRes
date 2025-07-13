@@ -2,7 +2,7 @@
 
 ## Description
 
-The `OptiRes` R package is designed to identify the optimal clustering resolution for single-cell RNA sequencing (scRNA-seq) analysis performed with the `Seurat` package. By leveraging the Silhouette Score algorithm, `OptiRes` evaluates a range of resolution values (default: 0.01 to 2.00) to determine the resolution that maximizes cluster quality, eliminating the need for arbitrary or experience-based resolution selection. This approach provides a mathematically robust method to enhance the reliability of scRNA-seq clustering results. Additionally, `OptiRes` includes functionality to visualize silhouette scores and generate colorful dendrograms for cluster relationships, aiding in cell type annotation.
+The `OptiRes` R package is designed to identify the optimal clustering resolution for single-cell RNA sequencing (scRNA-seq) analysis performed with the `Seurat` package. By leveraging the Silhouette Score algorithm, `OptiRes` evaluates a range of resolution values (default: 0.01 to 2.00) to determine the resolution that maximizes cluster quality, eliminating the need for arbitrary or experience-based resolution selection. This approach provides a mathematically robust method to enhance the reliability of scRNA-seq clustering results. Additionally, `OptiRes` includes functionality to visualize silhouette scores and generate colorful dendrograms for cluster relationships, aiding in cell type annotation. By the way, this package is also suitable for integrated seurat objects.
 
 ## Installation
 
@@ -113,12 +113,17 @@ View(results_df)
 
 The output is a data frame with two columns: `Resolution` and `SilhouetteScore`.
 
+```R
+# Abstract the value of the optimal resolution
+optimal_resolution = results_df$Resolution[which.max(results_df$SilhouetteScore)]
+cat("Optimal Resolution =", red(optimal_resolution))
+```
+
 ### Step 3: Visualize Silhouette Scores
 
 **Plot the silhouette scores to identify the optimal resolution:**
 
 ```R
-library(ggplot2)
 p <- Plot_res(results_df)
 print(p)
 ```
@@ -143,7 +148,9 @@ The `dims` parameter specifies the principal components used for building the cl
 **Visualize the clusters at the optimal resolution using a UMAP plot:**
 
 ```R
-library(Seurat)
+# Re-cluster on the optimal resolution factor
+Cell.integrated <- FindClusters(seu_obj, pc.use = 1:10, resolution = optimal_resolution, 
+                                                 group.singletons = TRUE, verbose = 0, save.SNN = T)
 DimPlot(seu_obj, reduction = "umap")
 ```
 
